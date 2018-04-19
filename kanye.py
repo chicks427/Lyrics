@@ -11,4 +11,5 @@ page_soup = soup(page_html, "html.parser") # Parses the html.
 
 albums = page_soup.findAll("a", {"class": "vertical_album_card"})
 
-print(albums[0])
+for album in albums:
+	print(album["href"])
