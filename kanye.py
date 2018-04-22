@@ -26,5 +26,10 @@ Kanye_albums = get_links('album', Kanye_soup)
 pablo = get_html(Kanye_albums[0])
 kanye_tracklist = get_links('song', pablo)
 
-for song in kanye_tracklist:
-	print(song)
+kanye_soup = {}
+for link in kanye_tracklist:
+    kanye_soup[link] = get_html(link)
+
+for item in kanye_soup:
+    print(item + '\n')
+    print(kanye_soup[item].p.text + '\n')
