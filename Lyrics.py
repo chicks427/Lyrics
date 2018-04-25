@@ -80,3 +80,11 @@ for artist in artist_links:
         album_soup = get_html(album_link)
         album_tracklist = get_links('song', album_soup)
         store_lyrics(album_tracklist)
+
+sdgaf_lyrics = []
+filename = "datasets/lyrics/Eminem/The Slim Shady LP/Still Don’t Give a Fuck.txt"
+file = open(filename,'r')
+for line in file:
+    if line[0] not in ['[', '\n']:
+        sdgaf_lyrics.append(line.replace("\n", ""))
+file.close()
